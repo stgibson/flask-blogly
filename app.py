@@ -29,7 +29,7 @@ def show_user_list():
         user's name is linked to the user's profile.
         rtype: str
     """
-    users = User.query.all()
+    users = User.query.order_by(User.last_name, User.first_name).all()
     return render_template("users.html", users=users)
 
 @app.route("/users/new")
