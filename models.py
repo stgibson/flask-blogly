@@ -23,7 +23,8 @@ class User(db.Model):
     
     image_url = db.Column(db.Text, nullable=True)
 
-    def get_full_name(self):
+    @property
+    def full_name(self):
         """
             Gets the user's first and last name concatenated. This way, if
             the format for names changes, the update only needs to be reflected
